@@ -240,6 +240,31 @@ ${toCopy}
   };
 </script>
 
+<svelte:head>
+  <title>ANSI Tool</title>
+  <meta name="description" content="A tool to help you make ANSI text." />
+  <meta name="keywords" content="ansi, tool, generator, text, discord" />
+  <meta name="author" content="Expo" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#5892ea" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicon.ico" />
+  <link rel="canonical" href="https://tool.ansi.paws.ong" />
+  <!-- opengraph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tool.ansi.paws.ong" />
+  <meta property="og:title" content="ANSI Tool" />
+  <meta
+    property="og:description"
+    content="A tool to help you make ANSI text."
+  />
+  <meta property="og:image" content="https://tool.ansi.paws.ong/social.png" />
+  <meta property="og:site_name" content="ANSI Tool" />
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+</svelte:head>
+
 <noscript> This tool requires JS to work. </noscript>
 
 <div class="darkreader-only">

@@ -1,6 +1,6 @@
 i'll make a proper readme later
 
-[![Social Image](./social.png)](https://tool.ansi.paws.ong)
+[![Social Image](./static/social.png)](https://tool.ansi.paws.ong)
 
 # AnsiTool
 
