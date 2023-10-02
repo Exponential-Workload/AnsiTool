@@ -1,0 +1,290 @@
+@mixin extendedStyles {
+  .ansi-2 {
+    opacity: 0.7;
+  }
+
+  .ansi-3 {
+    font-style: italic;
+  }
+
+  .ansi-5 {
+    @keyframes identifier {
+      0% {
+        opacity: 1;
+      }
+
+      25% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+
+      75% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    animation: identifier 1s infinite;
+  }
+}
+
+@mixin extendedColours {
+  @for $i from 90 through 97 {
+    .ansi-#{$i} {
+      color: var(--ansi-#{$i});
+    }
+
+    .ansi-#{$i}-bg {
+      background-color: var(--ansi-#{$i});
+    }
+  }
+
+  @for $i from 100 through 107 {
+    .ansi-#{$i} {
+      background-color: var(--ansi-#{$i});
+    }
+  }
+}
+
+@mixin matchingForegroundAndBackground() {
+  @for $i from 40 through 47 {
+    --ansi-#{$i}: var(--ansi-#{$i - 10});
+  }
+
+  @for $i from 100 through 107 {
+    --ansi-#{$i}: var(--ansi-#{$i - 10});
+  }
+}
+
+@mixin vscodeDefaultStyles {
+  @include matchingForegroundAndBackground();
+  // basic
+  --ansi-30: #545d67;
+  --ansi-31: #e45649;
+  --ansi-32: #53ac60;
+  --ansi-33: #c49237;
+  --ansi-34: #5c97f1;
+  --ansi-35: #b37fec;
+  --ansi-36: #3cc4ce;
+  --ansi-37: #919daa;
+
+  // extended
+  --ansi-90: #646e7a;
+  --ansi-91: #fe948c;
+  --ansi-92: #67c573;
+  --ansi-93: #d8ac4d;
+  --ansi-94: #72b3fb;
+  --ansi-95: #debbf8;
+  --ansi-96: #58d3dc;
+  --ansi-97: #cdd9e4;
+}
+
+@mixin gnomeStyles {
+  @include matchingForegroundAndBackground();
+
+  // basic
+  --ansi-30: #241f31;
+  --ansi-31: #c01c28;
+  --ansi-32: #2ec27e;
+  --ansi-33: #f5c211;
+  --ansi-34: #1e78e4;
+  --ansi-35: #9841bb;
+  --ansi-36: #0ab9dc;
+  --ansi-37: #c0bfbc;
+
+  // extended
+  --ansi-90: #5e5c64;
+  --ansi-91: #ed333b;
+  --ansi-92: #57e389;
+  --ansi-93: #f8e45c;
+  --ansi-94: #51a1ff;
+  --ansi-95: #c061cb;
+  --ansi-96: #4fd2fd;
+  --ansi-97: #f6f5f4;
+}
+
+@mixin pastelStyles {
+  // basic
+  --ansi-30: #2c2c2c;
+  --ansi-31: #f04747;
+  --ansi-32: #33c758;
+  --ansi-33: #e7d84b;
+  --ansi-34: #3a8ed7;
+  --ansi-35: #f07de3;
+  --ansi-36: #61d6d6;
+  --ansi-37: #d0d0d0;
+  --ansi-40: #2c2c2c;
+  --ansi-41: #f04747;
+  --ansi-42: #33c758;
+  --ansi-43: #e7d84b;
+  --ansi-44: #3a8ed7;
+  --ansi-45: #f07de3;
+  --ansi-46: #61d6d6;
+  --ansi-47: #d0d0d0;
+
+  // extended
+  --ansi-90: #4d4d4d;
+  --ansi-91: #f58e8e;
+  --ansi-92: #59d454;
+  --ansi-93: #f2f26f;
+  --ansi-94: #6cb2ff;
+  --ansi-95: #ff9dff;
+  --ansi-96: #69f1f1;
+  --ansi-97: #ffffff;
+  --ansi-100: #4d4d4d;
+  --ansi-101: #f58e8e;
+  --ansi-102: #59d454;
+  --ansi-103: #f2f26f;
+  --ansi-104: #6cb2ff;
+  --ansi-105: #ff9dff;
+  --ansi-106: #69f1f1;
+  --ansi-107: #ffffff;
+}
+
+@mixin discordStyles {
+  --ansi-30: #4f545c;
+  --ansi-31: #dc322f;
+  --ansi-32: #859900;
+  --ansi-33: #b58900;
+  --ansi-34: #268bd2;
+  --ansi-35: #d33682;
+  --ansi-36: #2aa198;
+  --ansi-37: #ffffff;
+  --ansi-40: #002b36;
+  --ansi-41: #cb4b16;
+  --ansi-42: #586e75;
+  --ansi-43: #657b83;
+  --ansi-44: #839496;
+  --ansi-45: #6c71c4;
+  --ansi-46: #93a1a1;
+  --ansi-47: #fdf6e3;
+}
+
+html {
+  font-family: sans-serif;
+  background-color: #36393F;
+  text-align: center;
+  color: #FFF;
+
+  body {
+
+    .tool {
+      @for $i from 30 through 37 {
+        .ansi-#{$i} {
+          color: var(--ansi-#{$i});
+          transition: color 0.3s ease-in-out;
+        }
+
+        .ansi-#{$i}-bg {
+          background-color: var(--ansi-#{$i});
+        }
+      }
+
+      @for $i from 40 through 47 {
+
+        .ansi-#{$i},
+        .ansi-#{$i}::selection {
+          background-color: var(--ansi-#{$i});
+          transition: background 0.3s ease-in-out;
+        }
+
+        .ansi-#{$i}::selection {
+          color: #000;
+        }
+      }
+
+      &.style-vscode-default {
+        @include extendedStyles;
+        @include extendedColours;
+
+        @include vscodeDefaultStyles;
+      }
+
+      &.style-gnome {
+        @include extendedStyles;
+        @include extendedColours;
+
+        @include gnomeStyles;
+      }
+
+      &.style-pastel {
+        @include extendedStyles;
+        @include extendedColours;
+
+        @include pastelStyles;
+      }
+
+      &.style-discord {
+        @include discordStyles;
+      }
+    }
+
+    .badge {
+      background: var(--ansi-34, #3a8ed7);
+      color: #fff;
+      padding: 4px 4px;
+      border-radius: 4px;
+      font-size: 0.77rem;
+      font-weight: 500;
+      margin: 0 0 0 0.2rem;
+    }
+
+    #textarea {
+      width: 600px;
+      height: 200px;
+      border-radius: 5px;
+      resize: both;
+      overflow: auto;
+      text-align: left;
+      font-family: 'Jetbrains Mono', monospace;
+      color: #B9BBBE;
+      border: #202225 1px solid;
+      padding: 5px;
+      display: inline-block;
+
+      white-space: pre-wrap;
+      font-size: 0.875rem;
+      line-height: 1.125rem;
+      text-indent: 0;
+    }
+
+    .button {
+      min-height: 32px;
+      min-width: 32px;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      background-color: #4f545c;
+      font-size: 14px;
+      padding: 2px 16px;
+      cursor: pointer;
+      transition: background-color 250ms linear;
+
+      &:disabled {
+        background-color: #2f3136;
+        cursor: not-allowed;
+      }
+    }
+
+    a,
+    a:visited {
+      color: #00AFF4
+    }
+
+    .ansi-1 {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .ansi-4 {
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+}
