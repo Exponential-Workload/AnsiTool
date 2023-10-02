@@ -240,6 +240,12 @@ ${toCopy}
   };
 </script>
 
+<noscript> This tool requires JS to work. </noscript>
+
+<div class="darkreader-only">
+  Disable Dark Reader. Colours will be inaccurate till you do.
+</div>
+
 <div class="tool {mode.name}">
   <h2 style="display:flex;align-items:center;justify-content:center;gap:8px;">
     Ansi tool
@@ -399,5 +405,8 @@ ${toCopy}
     &.style-button {
       margin-right: 4px;
     }
+  }
+  :global(html:not([data-darkreader-scheme])) .darkreader-only {
+    display: none;
   }
 </style>
